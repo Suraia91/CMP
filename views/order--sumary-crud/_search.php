@@ -5,12 +5,12 @@ use yii\widgets\ActiveForm;
 
 /**
  * @var yii\web\View $this
- * @var app\models\UsermodelSearch $model
+ * @var app\models\Order_SumarymodelSearch $model
  * @var yii\widgets\ActiveForm $form
  */
 ?>
 
-<div class="usermodel-search">
+<div class="order--sumarymodel-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -19,11 +19,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'Id') ?>
 
-    <?= $form->field($model, 'Email') ?>
+    <?= $form->field($model, 'Amount') ?>
 
-    <?= $form->field($model, 'Password') ?>
+    <?= $form->field($model, 'Detail') ?>
 
-    <?= $form->field($model, 'Phone') ?>
+    <?= $form->field($model, 'Date') ?>
+
+    <?= $form->field($model, 'User_Id') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

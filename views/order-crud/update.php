@@ -4,15 +4,15 @@ use yii\helpers\Html;
 
 /**
  * @var yii\web\View $this
- * @var app\models\Usermodel $model
+ * @var app\models\Ordermodel $model
  */
 
-$this->title = 'Update Usermodel: ' . $model->Id;
-$this->params['breadcrumbs'][] = ['label' => 'Usermodels', 'url' => ['index']];
+$this->title = 'Update Ordermodel: ' . $model->Id;
+$this->params['breadcrumbs'][] = ['label' => 'Ordermodels', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->Id, 'url' => ['view', 'id' => $model->Id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
-<div class="usermodel-update">
+<div class="ordermodel-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

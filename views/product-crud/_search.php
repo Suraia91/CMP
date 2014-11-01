@@ -5,25 +5,29 @@ use yii\widgets\ActiveForm;
 
 /**
  * @var yii\web\View $this
- * @var app\models\UsermodelSearch $model
+ * @var app\models\ProductmodelSearch $model
  * @var yii\widgets\ActiveForm $form
  */
 ?>
 
-<div class="usermodel-search">
+<div class="productmodel-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'Id') ?>
+    <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'Email') ?>
+    <?= $form->field($model, 'Name') ?>
 
-    <?= $form->field($model, 'Password') ?>
+    <?= $form->field($model, 'Description') ?>
 
-    <?= $form->field($model, 'Phone') ?>
+    <?= $form->field($model, 'Price') ?>
+
+    <?= $form->field($model, 'Quantity') ?>
+
+    <?php // echo $form->field($model, 'Category_Id') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

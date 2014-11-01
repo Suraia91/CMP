@@ -3,16 +3,16 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\Usermodel;
-use app\models\UsermodelSearch;
+use app\models\Productmodel;
+use app\models\ProductmodelSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * UserCrudController implements the CRUD actions for Usermodel model.
+ * ProductCrudController implements the CRUD actions for Productmodel model.
  */
-class UserCrudController extends Controller
+class ProductCrudController extends Controller
 {
     public function behaviors()
     {
@@ -27,12 +27,12 @@ class UserCrudController extends Controller
     }
 
     /**
-     * Lists all Usermodel models.
+     * Lists all Productmodel models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new UsermodelSearch;
+        $searchModel = new ProductmodelSearch;
         $dataProvider = $searchModel->search(Yii::$app->request->getQueryParams());
 
         return $this->render('index', [
@@ -42,7 +42,7 @@ class UserCrudController extends Controller
     }
 
     /**
-     * Displays a single Usermodel model.
+     * Displays a single Productmodel model.
      * @param integer $id
      * @return mixed
      */
@@ -54,16 +54,16 @@ class UserCrudController extends Controller
     }
 
     /**
-     * Creates a new Usermodel model.
+     * Creates a new Productmodel model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Usermodel;
+        $model = new Productmodel;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->Id]);
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -72,7 +72,7 @@ class UserCrudController extends Controller
     }
 
     /**
-     * Updates an existing Usermodel model.
+     * Updates an existing Productmodel model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -82,7 +82,7 @@ class UserCrudController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->Id]);
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -91,7 +91,7 @@ class UserCrudController extends Controller
     }
 
     /**
-     * Deletes an existing Usermodel model.
+     * Deletes an existing Productmodel model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -104,15 +104,15 @@ class UserCrudController extends Controller
     }
 
     /**
-     * Finds the Usermodel model based on its primary key value.
+     * Finds the Productmodel model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Usermodel the loaded model
+     * @return Productmodel the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Usermodel::findOne($id)) !== null) {
+        if (($model = Productmodel::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

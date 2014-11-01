@@ -5,14 +5,14 @@ use yii\widgets\DetailView;
 
 /**
  * @var yii\web\View $this
- * @var app\models\Usermodel $model
+ * @var app\models\Order_Sumarymodel $model
  */
 
 $this->title = $model->Id;
-$this->params['breadcrumbs'][] = ['label' => 'Usermodels', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Order  Sumarymodels', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="usermodel-view">
+<div class="order--sumarymodel-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -31,9 +31,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'Id',
-            'Email:email',
-            'Password',
-            'Phone',
+            'Amount',
+            'Detail:ntext',
+            'Date',
+            'User_Id',
         ],
     ]) ?>
 

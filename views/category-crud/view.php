@@ -5,14 +5,14 @@ use yii\widgets\DetailView;
 
 /**
  * @var yii\web\View $this
- * @var app\models\Usermodel $model
+ * @var app\models\Categorymodel $model
  */
 
-$this->title = $model->Id;
-$this->params['breadcrumbs'][] = ['label' => 'Usermodels', 'url' => ['index']];
+$this->title = $model->Name;
+$this->params['breadcrumbs'][] = ['label' => 'Categorymodels', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="usermodel-view">
+<div class="categorymodel-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -31,9 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'Id',
-            'Email:email',
-            'Password',
-            'Phone',
+            'Name',
         ],
     ]) ?>
 

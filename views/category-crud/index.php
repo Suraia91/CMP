@@ -6,20 +6,20 @@ use yii\grid\GridView;
 /**
  * @var yii\web\View $this
  * @var yii\data\ActiveDataProvider $dataProvider
- * @var app\models\UsermodelSearch $searchModel
+ * @var app\models\CategorymodelSearch $searchModel
  */
 
-$this->title = 'Usermodels';
+$this->title = 'Categorymodels';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="usermodel-index">
+<div class="categorymodel-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Usermodel', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Categorymodel', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -29,9 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'Id',
-            'Email:email',
-            'Password',
-            'Phone',
+            'Name',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

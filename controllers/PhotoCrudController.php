@@ -3,16 +3,16 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\Usermodel;
-use app\models\UsermodelSearch;
+use app\models\Photomodel;
+use app\models\PhotomodelSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * UserCrudController implements the CRUD actions for Usermodel model.
+ * PhotoCrudController implements the CRUD actions for Photomodel model.
  */
-class UserCrudController extends Controller
+class PhotoCrudController extends Controller
 {
     public function behaviors()
     {
@@ -27,12 +27,12 @@ class UserCrudController extends Controller
     }
 
     /**
-     * Lists all Usermodel models.
+     * Lists all Photomodel models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new UsermodelSearch;
+        $searchModel = new PhotomodelSearch;
         $dataProvider = $searchModel->search(Yii::$app->request->getQueryParams());
 
         return $this->render('index', [
@@ -42,7 +42,7 @@ class UserCrudController extends Controller
     }
 
     /**
-     * Displays a single Usermodel model.
+     * Displays a single Photomodel model.
      * @param integer $id
      * @return mixed
      */
@@ -54,13 +54,13 @@ class UserCrudController extends Controller
     }
 
     /**
-     * Creates a new Usermodel model.
+     * Creates a new Photomodel model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Usermodel;
+        $model = new Photomodel;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->Id]);
@@ -72,7 +72,7 @@ class UserCrudController extends Controller
     }
 
     /**
-     * Updates an existing Usermodel model.
+     * Updates an existing Photomodel model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -91,7 +91,7 @@ class UserCrudController extends Controller
     }
 
     /**
-     * Deletes an existing Usermodel model.
+     * Deletes an existing Photomodel model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -104,15 +104,15 @@ class UserCrudController extends Controller
     }
 
     /**
-     * Finds the Usermodel model based on its primary key value.
+     * Finds the Photomodel model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Usermodel the loaded model
+     * @return Photomodel the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Usermodel::findOne($id)) !== null) {
+        if (($model = Photomodel::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

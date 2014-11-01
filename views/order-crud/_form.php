@@ -5,22 +5,24 @@ use yii\widgets\ActiveForm;
 
 /**
  * @var yii\web\View $this
- * @var app\models\Usermodel $model
+ * @var app\models\Ordermodel $model
  * @var yii\widgets\ActiveForm $form
  */
 ?>
 
-<div class="usermodel-form">
+<div class="ordermodel-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'Id')->textInput() ?>
 
-    <?= $form->field($model, 'Email')->textInput(['maxlength' => 50]) ?>
+    <?= $form->field($model, 'Quantity')->textInput() ?>
 
-    <?= $form->field($model, 'Password')->passwordInput(['maxlength' => 50]) ?>
+    <?= $form->field($model, 'Price')->textInput() ?>
 
-    <?= $form->field($model, 'Phone')->textInput(['maxlength' => 50]) ?>
+    <?= $form->field($model, 'Product_Id')->textInput() ?>
+
+    <?= $form->field($model, 'Order_Sumary_Id')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
