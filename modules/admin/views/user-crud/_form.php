@@ -5,19 +5,21 @@ use yii\widgets\ActiveForm;
 
 /**
  * @var yii\web\View $this
- * @var app\models\Categorymodel $model
+ * @var app\models\Usermodel $model
  * @var yii\widgets\ActiveForm $form
  */
+
 ?>
 
-<div class="categorymodel-form">
+<div class="usermodel-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'Id')->textInput() ?>
+    <?= $form->field($model, 'Email')->textInput(['maxlength' => 50]) ?>
 
-    <?= $form->field($model, 'Name')->textInput(['maxlength' => 50]) ?>
+    <?= $form->field($model, 'Password')->passwordInput(['maxlength' => 50]) ?>
 
+    <?= $form->field($model, 'Phone')->textInput(['maxlength' => 50]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

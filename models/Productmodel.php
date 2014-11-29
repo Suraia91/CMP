@@ -34,7 +34,7 @@ class Productmodel extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'Name', 'Description', 'Price', 'Quantity', 'Category_Id'], 'required'],
+            [['Name', 'Description', 'Price', 'Quantity', 'Category_Id'], 'required'],
             [['id', 'Quantity', 'Category_Id'], 'integer'],
             [['Description'], 'string'],
             [['Price'], 'number'],
@@ -78,6 +78,6 @@ class Productmodel extends \yii\db\ActiveRecord
      */
     public function getCategory()
     {
-        return $this->hasOne(Category::className(), ['Id' => 'Category_Id']);
+        return $this->hasOne(Categorymodel::className(), ['Id' => 'Category_Id']);
     }
 }

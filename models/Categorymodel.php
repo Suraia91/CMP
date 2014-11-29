@@ -28,10 +28,8 @@ class Categorymodel extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['Id', 'Name'], 'required'],
-            [['Id'], 'integer'],
+            [['Name'], 'required'],
             [['Name'], 'string', 'max' => 50],
-            [['Id'], 'unique']
         ];
     }
 

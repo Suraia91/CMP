@@ -29,8 +29,8 @@ class Photomodel extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['Id', 'Path', 'Product_Id'], 'required'],
-            [['Id', 'Product_Id'], 'integer'],
+            [[ 'Path', 'Product_Id'], 'required'],
+            [[ 'Product_Id'], 'integer'],
             [['Path'], 'string'],
             [['Product_Id'], 'unique']
         ];

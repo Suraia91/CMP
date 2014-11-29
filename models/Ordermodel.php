@@ -32,8 +32,8 @@ class Ordermodel extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['Id', 'Quantity', 'Price', 'Product_Id', 'Order_Sumary_Id'], 'required'],
-            [['Id', 'Quantity', 'Product_Id', 'Order_Sumary_Id'], 'integer'],
+            [[ 'Quantity', 'Price', 'Product_Id', 'Order_Sumary_Id'], 'required'],
+            [[ 'Quantity', 'Product_Id', 'Order_Sumary_Id'], 'integer'],
             [['Price'], 'number'],
             [['Order_Sumary_Id'], 'unique'],
             [['Product_Id'], 'unique']

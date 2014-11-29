@@ -5,19 +5,18 @@ use yii\widgets\ActiveForm;
 
 /**
  * @var yii\web\View $this
- * @var app\models\Categorymodel $model
+ * @var app\models\Photomodel $model
  * @var yii\widgets\ActiveForm $form
  */
 ?>
 
-<div class="categorymodel-form">
+<div class="photomodel-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'Id')->textInput() ?>
+    <?= $form->field($model, 'Path')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'Name')->textInput(['maxlength' => 50]) ?>
-
+    <?= $form->field($model, 'Product_Id')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

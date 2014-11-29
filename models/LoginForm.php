@@ -35,6 +35,7 @@ class LoginForm extends Model
      * Validates the password.
      * This method serves as the inline validation for password.
      */
+
     public function validatePassword()
     {
         if (!$this->hasErrors()) {
@@ -45,7 +46,17 @@ class LoginForm extends Model
             }
         }
     }
+     public function EmailValidator()
+    {
+       $email = 'test@example.com';
+          $validator = new yii\validators\EmailValidator();
 
+        if($validator->validate($email, $error)) {
+           echo 'Email is valid.';
+}              else {
+              echo $error;
+}
+        }
     /**
      * Logs in a user using the provided username and password.
      * @return boolean whether the user is logged in successfully
@@ -67,7 +78,7 @@ class LoginForm extends Model
     public function getUser()
     {
         if ($this->_user === false) {
-            $this->_user = User::findByUsername($this->username);
+            $this->_user = Usermodel::findByUsername($this->username);
         }
 
         return $this->_user;

@@ -5,19 +5,23 @@ use yii\widgets\ActiveForm;
 
 /**
  * @var yii\web\View $this
- * @var app\models\Categorymodel $model
+ * @var app\models\Ordermodel $model
  * @var yii\widgets\ActiveForm $form
  */
 ?>
 
-<div class="categorymodel-form">
+<div class="ordermodel-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'Id')->textInput() ?>
 
-    <?= $form->field($model, 'Name')->textInput(['maxlength' => 50]) ?>
+    <?= $form->field($model, 'Quantity')->textInput() ?>
 
+    <?= $form->field($model, 'Price')->textInput() ?>
+
+    <?= $form->field($model, 'Product_Id')->textInput() ?>
+
+    <?= $form->field($model, 'Order_Sumary_Id')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

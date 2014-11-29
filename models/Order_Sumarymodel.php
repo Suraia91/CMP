@@ -32,8 +32,8 @@ class Order_Sumarymodel extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['Id', 'Amount', 'Detail', 'Date', 'User_Id'], 'required'],
-            [['Id', 'Amount', 'User_Id'], 'integer'],
+            [[ 'Amount', 'Detail', 'Date', 'User_Id'], 'required'],
+            [['Amount', 'User_Id'], 'integer'],
             [['Detail'], 'string'],
             [['Date'], 'safe'],
             [['User_Id'], 'unique']
